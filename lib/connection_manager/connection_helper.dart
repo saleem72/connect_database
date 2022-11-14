@@ -1,5 +1,7 @@
 //
 
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:isolate';
 
 import 'package:flutter/services.dart';

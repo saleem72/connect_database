@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../styling/pallet.dart';
+import '../../helpers/styling/pallet.dart';
 
 class RecordDetailsScreen extends StatelessWidget {
   const RecordDetailsScreen({

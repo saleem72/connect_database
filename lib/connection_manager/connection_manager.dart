@@ -1,19 +1,12 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, depend_on_referenced_packages
 //
-
-import 'dart:collection';
-import 'dart:convert';
 import 'dart:isolate';
 
 import 'package:connect_database/failure/failure.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:dartz/dartz.dart';
 
-import '../models/subject.dart';
 import 'models/connection_params.dart';
-
-//
 
 class ConnectionManager {
   static const platform = MethodChannel('coders.com/connect_database');

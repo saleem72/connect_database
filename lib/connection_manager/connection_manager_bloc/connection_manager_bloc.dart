@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, invalid_use_of_visible_for_testing_member
+
 import 'dart:isolate';
 import 'dart:ui';
 
@@ -6,7 +8,6 @@ import 'package:connect_database/connection_manager/connection_manager.dart';
 import 'package:connect_database/failure/failure.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:meta/meta.dart';
 
 import '../connection_helper.dart';
 import '../models/connection_params.dart';
@@ -92,7 +93,6 @@ class ConnectionManagerBloc
         await _connectionManager.connect(query: query, params: params);
     result.fold(
       (failure) {
-        print(failure.message);
         emit(ConnectionManagerFailure(failure: failure));
       },
       (records) {
@@ -130,7 +130,6 @@ class ConnectionManagerBloc
     };
     WidgetsFlutterBinding.ensureInitialized();
     DartPluginRegistrant.ensureInitialized();
-    print(platform.binaryMessenger);
     final isolate = await Isolate.spawn(
       ConnectionHelper.executeSql,
       [receivePort.sendPort, platform, arguments],
